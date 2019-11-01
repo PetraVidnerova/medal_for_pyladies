@@ -1,19 +1,21 @@
+$fn = 100;
+
 // medaile
 module medaile_telo() {
-    circle(10);
+    cylinder(h=1, r=10);
 }
 
 module krouzek() {
     difference() {
-       circle(10);
-       circle(9);
+       cylinder(h=1, r=10);
+       translate([0, 0, -1]) cylinder(h=3, r=9);
     }
 }
 
 module ousko() {
     difference() {
-        circle(3);
-        circle(2);
+        cylinder(h=1, r=3);
+        translate([0, 0, -1]) cylinder(h=3, r=2);
     }
 }
 
@@ -24,12 +26,15 @@ module logo() {
     import("Python_badge.stl");
 }
 
-
-union() {
-     translate([10, 0, 0]) ousko();
-     medaile_telo();
-     translate([0, 0, 1]) krouzek(); 
-     translate([0.5, -1.5, -1]) 
-     rotate([0,0,90])
-     logo();
+module medaile() {
+    union() {
+         translate([10, 0, 0]) ousko();
+         medaile_telo();
+         translate([0, 0, 1]) krouzek(); 
+         translate([0.5, -1.5, 0]) 
+         rotate([0,0,90])
+         logo();
+    }
 }
+
+scale([4, 4, 2]) medaile();
