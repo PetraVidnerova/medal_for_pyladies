@@ -20,21 +20,29 @@ module ousko() {
 }
 
 module logo() {
-    scale([0.25, 0.25, 0.25])
+    scale([0.1, 0.1, 0.07])
     color("blue")
-    translate([-500, -500, -130]) 
-    import("Python_badge.stl");
+    //translate([-500, -500, -130]) 
+    import("T-PythonTOP-blue.stl");     
+
+    scale([0.1, 0.1, 0.07])
+    color("yellow")
+    rotate(180)
+    translate([-145, 143, -0]) 
+    import("T-PythonTOP-blue.stl");     
 }
 
 module medaile() {
     union() {
          translate([10, 0, 0]) ousko();
          medaile_telo();
-         translate([0, 0, 1]) krouzek(); 
-         translate([0.5, -1.5, 0]) 
-         rotate([0,0,90])
+         translate([0, 0, 1]) krouzek();
+        
+         rotate(-90)
+         translate([-7, 7, 1]) 
          logo();
     }
 }
+
 
 scale([4, 4, 2]) medaile();

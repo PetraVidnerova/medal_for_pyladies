@@ -3,4 +3,4 @@
 
 Made for PyLadies courses.
 
-You need [this Python badge](http://www.thingiverse.com/thing:134394)
+You need [this Python logo](https://www.thingiverse.com/thing:901468/files)
