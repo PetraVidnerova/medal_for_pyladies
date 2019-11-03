@@ -20,15 +20,15 @@ module ousko() {
 }
 
 module logo() {
-    scale([0.1, 0.1, 0.07])
+    scale([0.1, 0.1, 0.1])
     color("blue")
-    //translate([-500, -500, -130]) 
+    translate([0, 0, 1]) 
     import("T-PythonTOP-blue.stl");     
 
-    scale([0.1, 0.1, 0.07])
+    scale([0.1, 0.1, 0.1])
     color("yellow")
     rotate(180)
-    translate([-145, 143, -0]) 
+    translate([-145, 143, 1]) 
     import("T-PythonTOP-blue.stl");     
 }
 
